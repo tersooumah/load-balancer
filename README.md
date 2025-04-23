@@ -1,13 +1,13 @@
 # A step by step buide on how to configure load balancer in AWS
 
  There are 7 main setups you need to configure on the AWS platform to achieve this, and they are:
-VPC
-Internet Gateway
-Subnet
-Route table
-EC2 instance (2 instances)
-Target group
-Load Balancer
+1. VPC
+2. Internet Gateway
+3. Subnet
+4. Route table
+5. EC2 instance (2 instances)
+5. Target group
+7. Load Balancer
 
 
 ## VPC
@@ -70,10 +70,10 @@ You need to create 2 subnets for the 2 VPCs you’ll be creating to test the loa
 ![14](https://github.com/user-attachments/assets/0df24a85-f73c-4cf6-89c0-64e699b014a6)
 
 
-•	Follow the same steps to create the new subnet, save for a few changes:
-o	Fill in a different name for his subnet
-o	Click the ‘Availability zone’ dropdown, and for this subnet, you’ll be using ‘us-east-1b’.
-o	In the IPv4 subnet CIDR block, use the subnet range 20.0.3.0/24. Once done, click ‘Create subnet.’
+•	Follow the same steps to create the new subnet, save for a few changes: 
+Fill in a different name for his subnet.
+Click the ‘Availability zone’ dropdown, and for this subnet, you’ll be using ‘us-east-1b’.
+In the IPv4 subnet CIDR block, use the subnet range 20.0.3.0/24. Once done, click ‘Create subnet.’
 ![15](https://github.com/user-attachments/assets/9c092121-9d65-4071-8803-021f3eb9511d)
 
 
@@ -148,21 +148,21 @@ We’ll be creating 2 EC2 instances to test our load balancer configuration.
 ![31](https://github.com/user-attachments/assets/a8a37b14-e7cf-41b3-b971-e78465d13c7c)
 
 
-o	Fill in the VPC we’ve been working with
-o	Select the first subnet created earlier, ‘ce-class-subnet-1a’
-o	‘Enable’ auto assign IP
+Fill in the VPC we’ve been working with
+Select the first subnet created earlier, ‘ce-class-subnet-1a’
+‘Enable’ auto assign IP
 ![32](https://github.com/user-attachments/assets/bab78420-99f8-4373-9442-004015d86e24)
 
 
 •	In the Firewall (security groups) section: 
-o	Select ‘create secutity group’,
-o	Fill in your security group name
-o	Click on ‘add security group rule’
+Select ‘create secutity group’.
+Fill in your security group name.
+Click on ‘add security group rule’.
 ![33](https://github.com/user-attachments/assets/344f324e-8704-408a-8311-2fd77d8c3842)
 
-o	On the ‘Type’ drop-down, select ‘http’
-o	On the ‘Source type’ drop-down, select ‘Anywhere’
-o	Click on the ‘Launch instance’ button
+On the ‘Type’ drop-down, select ‘http’.
+On the ‘Source type’ drop-down, select ‘Anywhere’.
+Click on the ‘Launch instance’ button.
 ![34](https://github.com/user-attachments/assets/3ef9c3bb-2855-4fc0-81ac-0989605256ab)
 
 
@@ -212,10 +212,10 @@ The next step is to upload the web pages into the respective EC2 instances. To l
 ![47](https://github.com/user-attachments/assets/88d27059-6111-4762-b73e-205cb7dde0d5)
 
 
-•	Under basic configuration
-o	Fill in a name for your load balancer
-o	On the ‘scheme’ section Fill in ‘Internet-facing’
-o	On the ‘Load balancer IP address’ type, select ‘IPv4’
+•	Under basic configuration:
+Fill in a name for your load balancer.
+On the ‘scheme’ section Fill in ‘Internet-facing’.
+On the ‘Load balancer IP address’ type, select ‘IPv4.’
 ![48](https://github.com/user-attachments/assets/217b53d2-9f81-4eaa-a4ea-874eed0c071b)
 
 
@@ -223,9 +223,9 @@ o	On the ‘Load balancer IP address’ type, select ‘IPv4’
 ![49](https://github.com/user-attachments/assets/631146a0-3aea-47bc-a9a9-107275400233)
 
 
-o	Fill in your security group name
-o	Fill in a description
-o	Click the VPC drop-down and select the VPC you’ve been working with.
+Fill in your security group name.
+Fill in a description.
+Click the VPC drop-down and select the VPC you’ve been working with.
 ![50](https://github.com/user-attachments/assets/3fbe11e7-aeee-45b1-a3ee-0a459ffa2115)
 
 
